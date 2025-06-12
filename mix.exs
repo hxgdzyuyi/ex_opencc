@@ -7,7 +7,7 @@ defmodule ExOpencc.MixProject do
       version: "0.1.0",
       elixir: "~> 1.14",
       start_permanent: Mix.env() == :prod,
-      compilers: Mix.compilers() ++ [:make],
+      compilers: [:make] ++ Mix.compilers(),
       deps: deps(),
       package: package(),
       description: description(),
@@ -56,5 +56,13 @@ defmodule ExOpencc.MixProject do
     """
     An Elixir wrapper for OpenCC, a library for converting between Traditional Chinese and Simplified Chinese.
     """
+  end
+end
+
+
+defmodule Mix.Tasks.Compile.Make do
+  def run(_args) do
+    Mix.shell().cmd("make ex_opencc", quiet: false)
+    :ok
   end
 end
