@@ -9,6 +9,7 @@ defmodule ExOpencc.MixProject do
       start_permanent: Mix.env() == :prod,
       compilers: Mix.compilers() ++ [:make],
       deps: deps(),
+      package: package(),
 
       # Docs
       name: "ex_opencc",
@@ -37,6 +38,17 @@ defmodule ExOpencc.MixProject do
       # {:dep_from_hexpm, "~> 0.3.0"},
       # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
       {:ex_doc, "~> 0.34", only: :dev, runtime: false, warn_if_outdated: true},
+    ]
+  end
+
+  defp package() do
+    [
+      name: "ex_opencc",
+      # These are the default files included in the package
+      files: ~w(lib priv .formatter.exs mix.exs README* readme* LICENSE*
+                license* CHANGELOG* changelog* c_src),
+      licenses: ["Apache-2.0"],
+      links: %{"GitHub" => "https://github.com/hxgdzyuyi/ex_opencc"}
     ]
   end
 end
