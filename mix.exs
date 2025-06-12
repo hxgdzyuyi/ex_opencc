@@ -56,4 +56,5 @@ defmodule ExOpencc.MixProject do
     """
     An Elixir wrapper for OpenCC, a library for converting between Traditional Chinese and Simplified Chinese.
     """
+  end
 end
