@@ -10,6 +10,7 @@ defmodule ExOpencc.MixProject do
       compilers: Mix.compilers() ++ [:make],
       deps: deps(),
       package: package(),
+      description: description(),
 
       # Docs
       name: "ex_opencc",
@@ -45,10 +46,14 @@ defmodule ExOpencc.MixProject do
     [
       name: "ex_opencc",
       # These are the default files included in the package
-      files: ~w(lib priv .formatter.exs mix.exs README* readme* LICENSE*
-                license* CHANGELOG* changelog* c_src),
+      files: ~w(lib priv .formatter.exs mix.exs README* c_src),
       licenses: ["Apache-2.0"],
       links: %{"GitHub" => "https://github.com/hxgdzyuyi/ex_opencc"}
     ]
   end
+
+  defp description do
+    """
+    An Elixir wrapper for OpenCC, a library for converting between Traditional Chinese and Simplified Chinese.
+    """
 end
